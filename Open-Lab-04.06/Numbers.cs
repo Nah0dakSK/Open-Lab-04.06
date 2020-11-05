@@ -6,7 +6,18 @@ namespace Open_Lab_04._06
     {
         public int[] NoOdds(int[] numbers)
         {
-            throw new NotImplementedException();
+            int index = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if(numbers[i] % 2 == 0)
+                {
+                    int temp = numbers[index];
+                    numbers[index] = numbers[i];
+                    numbers[i] = temp;
+                    index++;
+                }
+            }
+            return numbers;
         }
     }
 }
